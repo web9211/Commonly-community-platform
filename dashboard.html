@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Commonly — Community</title>
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+
+      <a class="brand" href="/" aria-label="Commonly home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span>commonly</span>
+      </a>
+
+      <div class="side-label">YOUR SPACE</div>
+
+      <nav class="nav-list" aria-label="Main navigation">
+
+        <button class="nav-item active" data-view="home">
+          <span class="nav-icon">⌂</span> Home
+        </button>
+
+        <button class="nav-item" data-view="explore">
+          <span class="nav-icon">⌕</span> Explore
+        </button>
+
+        <button class="nav-item" data-view="offers">
+          <span class="nav-icon">↗</span> Offers
+        </button>
+
+        <button class="nav-item" data-view="requests">
+          <span class="nav-icon">＋</span> Requests
+        </button>
+
+        <button class="nav-item" data-view="activity">
+          <span class="nav-icon">▤</span> My activity
+        </button>
+
+      </nav>
+
+      <div class="side-label">PERSONAL</div>
+
+      <nav class="nav-list">
+
+        <button class="nav-item" data-view="profile">
+          <span class="nav-icon">◎</span> Profile
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="help-card">
+          <span class="help-spark">#</span>
+          <strong>Small acts matter.</strong>
+          <p>Every offer can make someone's day easier.</p>
+        </div>
+
+        <button class="profile-mini" id="sidebarProfile">
+
+          <span class="avatar" id="avatarInitials">U</span>
+
+          <span class="profile-mini-copy">
+            <strong id="sidebarName">Your account</strong>
+            <small id="sidebarUsername">@community</small>
+          </span>
+
+          <span class="more">···</span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <main class="main-area">
+
+      <header class="topbar">
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+
+        <div class="breadcrumb">
+          <span>Community</span>
+          <span class="crumb-dot">/</span>
+          <strong id="currentSection">Home</strong>
+        </div>
+
+        <div class="top-actions">
+
+          <button class="top-user" id="topProfile">
+
+            <span class="avatar avatar-small" id="topInitials">U</span>
+
+            <span id="topName">You</span>
+
+            <span class="chevron">⌄</span>
+
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <div class="content-wrap">
+
+        <section class="welcome-row" id="homeSection">
+
+          <div>
+
+            <p class="eyebrow" id="dateGreeting">
+              YOUR COMMUNITY, YOUR PLACE
+            </p>
+
+            <h1 id="welcomeTitle">
+              Good things grow <em>together.</em>
+            </h1>
+
+            <p class="welcome-copy" id="welcomeCopy">
+              Share what you have. Find what you need.
+              Make a little more room for kindness.
+            </p>
+
+          </div>
+
+          <div class="welcome-art" aria-hidden="true">
+
+            <span class="art-orbit orbit1"></span>
+            <span class="art-orbit orbit2"></span>
+
+            <span class="art-heart">♥</span>
+
+            <span class="art-star star1">✧</span>
+            <span class="art-star star2">✧</span>
+
+          </div>
+
+        </section>
+
+
+        <section class="quick-actions" aria-label="Create a post">
+
+          <button class="quick-card offer-quick" id="quickOffer">
+
+            <span class="quick-symbol">↗</span>
+
+            <span>
+              <strong>Share an offer</strong>
+              <small>Something you can give or do</small>
+            </span>
+
+            <span class="quick-arrow">→</span>
+
+          </button>
+
+          <button class="quick-card request-quick" id="quickRequest">
+
+            <span class="quick-symbol">＋</span>
+
+            <span>
+              <strong>Make a request</strong>
+              <small>Something you could use help with</small>
+            </span>
+
+            <span class="quick-arrow">→</span>
+
+          </button>
+
+        </section>
+
+        <section class="plan-banner" aria-label="Commonly membership">
+          <div class="plan-banner-copy">
+            <span class="plan-kicker">YOUR COMMONLY PLAN</span>
+            <strong id="planStatus">Free plan · 1 offer + 1 request per day</strong>
+            <small id="planUsage">Upgrade for unlimited posts and the AI post creator.</small>
+          </div>
+          <button type="button" class="plan-banner-button" id="openPlus">
+            Explore Plus <span>→</span>
+          </button>
+        </section>
+
+
+        <section class="stats-row" aria-label="Community overview">
+
+          <article class="stat-card">
+
+            <span class="stat-icon stat-green">↗</span>
+
+            <div>
+              <small>Community offers</small>
+              <strong id="offerStat">0</strong>
+            </div>
+
+            <span class="stat-note">shared nearby</span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <span class="stat-icon stat-purple">＋</span>
+
+            <div>
+              <small>Open requests</small>
+              <strong id="requestStat">0</strong>
+            </div>
+
+            <span class="stat-note">looking for help</span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <span class="stat-icon stat-peach">♥</span>
+
+            <div>
+              <small>Kindness moments</small>
+              <strong id="thanksStat">0</strong>
+            </div>
+
+            <span class="stat-note">and counting</span>
+
+          </article>
+
+        </section>
+
+
+        <section class="feed-section" id="feedSection">
+
+          <div class="section-heading">
+
+            <div>
+
+              <p class="eyebrow">WHAT'S HAPPENING</p>
+
+              <h2 id="feedTitle">
+                Around your community
+              </h2>
+
+            </div>
+
+            <button class="text-button" id="seeAll">
+              See all <span>→</span>
+            </button>
+
+          </div>
+
+
+          <div class="feed-toolbar">
+
+            <div class="search-box">
+
+              <span>⌕</span>
+
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search offers and requests..."
+                aria-label="Search community posts"
+              >
+
+            </div>
+
+
+            <select id="categoryFilter" aria-label="Filter by category">
+
+              <option value="all">All categories</option>
+
+              <option value="Home">Home</option>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Skills">Skills</option>
+              <option value="Books">Books</option>
+              <option value="Garden">Garden</option>
+              <option value="Other">Other</option>
+
+            </select>
+
+
+            <div class="type-filter" role="group" aria-label="Post type">
+
+              <button class="type-chip active" data-type="all">
+                All
+              </button>
+
+              <button class="type-chip" data-type="offer">
+                Offers
+              </button>
+
+              <button class="type-chip" data-type="request">
+                Requests
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="feed-grid" id="feedGrid">
+
+            <div class="empty-state">
+
+              <div class="empty-icon">✧</div>
+
+              <strong>No community posts yet</strong>
+
+              <p>
+                Be the first to share an offer or make a request.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="feed-footer">
+
+            <span id="feedCount">No posts yet</span>
+
+            <button class="load-more" id="loadMore">
+              Load more <span>↓</span>
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <footer class="app-footer">
+
+          <span>© 2026 Commonly</span>
+
+          <span>
+            Good things grow together <b>∆</b>
+          </span>
+
+        </footer>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- CREATE OFFER / REQUEST MODAL -->
+
+  <div
+    class="modal-backdrop hidden"
+    id="postModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="modal-card">
+
+      <div class="modal-head">
+
+        <div>
+
+          <p class="eyebrow">MAKE A LITTLE GOOD</p>
+
+          <h2 id="modalTitle">Share an offer</h2>
+
+        </div>
+
+        <button
+          class="close-modal"
+          id="closeModal"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="postForm">
+
+        <div class="mode-switch">
+
+          <button
+            type="button"
+            class="mode-option active"
+            data-mode="offer"
+          >
+            I can offer
+          </button>
+
+          <button
+            type="button"
+            class="mode-option"
+            data-mode="request"
+          >
+            I need
+          </button>
+
+        </div>
+
+
+
+
+        <section class="ai-composer" id="aiComposer">
+          <div class="ai-composer-heading">
+            <div>
+              <span class="ai-eyebrow">COMMONLY PLUS FEATURE</span>
+              <strong>GoodOne AI <span class="ai-spark">✦</span></strong>
+              <p>Describe what you have in mind. We'll prepare a draft for you to review.</p>
+            </div>
+            <span class="ai-pill">AI ASSISTANT</span>
+          </div>
+          <label class="form-field ai-prompt-field">
+            <span>Your idea</span>
+            <textarea id="aiPrompt" rows="3" maxlength="2500"
+              placeholder="Example: I have extra home-grown tomatoes to share with someone in my neighborhood..."></textarea>
+          </label>
+          <div class="ai-composer-bottom">
+            <small>Generated details are suggestions. Review every field before publishing.</small>
+            <button type="button" class="ai-generate-button" id="generateWithAI">
+              <span>✦</span> Generate draft
+            </button>
+          </div>
+          <p class="ai-privacy-note">AI provider: Google Gemini. Your text is sent to Google to generate a draft; Google's free-tier data practices apply. Don't include sensitive personal information.</p>
+          <button type="button" class="ai-upgrade-link hidden" id="aiUpgrade">Unlock GoodOne AI with Commonly Plus</button>
+        </section>
+
+
+        <label class="form-field">
+
+          <span>Title <b>*</b></span>
+
+          <input
+            name="title"
+            id="postTitle"
+            maxlength="100"
+            placeholder="e.g. Extra garden tomatoes"
+            required
+          >
+
+        </label>
+
+
+        <label class="form-field">
+
+          <span>Description <b>*</b></span>
+
+          <textarea
+            name="description"
+            id="postDescription"
+            rows="3"
+            maxlength="1000"
+            placeholder="Add a few details..."
+            required
+          ></textarea>
+
+        </label>
+
+
+        <div class="form-two">
+
+          <label class="form-field">
+
+            <span>Category <b>*</b></span>
+
+            <select name="category" id="postCategory" required>
+
+              <option value="">Choose category</option>
+
+              <option>Home</option>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Skills</option>
+              <option>Books</option>
+              <option>Garden</option>
+              <option>Other</option>
+
+            </select>
+
+          </label>
+
+
+          <label class="form-field">
+
+            <span>Available until</span>
+
+            <input
+              name="availableUntil"
+              id="availableUntil"
+              type="datetime-local"
+            >
+
+          </label>
+
+        </div>
+
+
+        <div class="form-two">
+
+          <label class="form-field">
+
+            <span>Area / neighborhood</span>
+
+            <input
+              name="location"
+              id="postLocation"
+              maxlength="120"
+              placeholder="Your neighborhood"
+            >
+
+          </label>
+
+
+          <label class="form-field">
+
+            <span>Photo URL (optional)</span>
+
+            <input
+              name="imageUrl"
+              id="postImage"
+              type="url"
+              placeholder="https://..."
+            >
+
+          </label>
+
+        </div>
+
+
+        <p class="form-hint">
+          Photos currently use an image URL.
+          Secure uploads can be added later.
+        </p>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="button-quiet"
+            id="cancelPost"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="button-primary"
+            id="submitPost"
+          >
+            Publish offer <span>→</span>
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- PROFILE MODAL -->
+
+  <div
+    class="modal-backdrop hidden"
+    id="profileModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="profileModalTitle"
+  >
+
+    <div class="modal-card">
+
+      <div class="modal-head">
+
+        <div>
+
+          <p class="eyebrow">YOUR COMMUNITY PROFILE</p>
+
+          <h2 id="profileModalTitle">Your profile</h2>
+
+        </div>
+
+        <button
+          class="close-modal"
+          id="closeProfile"
+          aria-label="Close profile"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="profileForm">
+
+        <div class="profile-form-avatar">
+
+          <span class="avatar profile-avatar-large" id="profileInitials">
+            U
+          </span>
+
+          <div>
+
+            <strong id="profileDisplayName">
+              Community member
+            </strong>
+
+            <small id="profileDisplayUsername">
+              @community
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <label class="form-field">
+
+          <span>Full name <b>*</b></span>
+
+          <input
+            id="profileName"
+            name="name"
+            maxlength="80"
+            placeholder="Your name"
+            required
+          >
+
+        </label>
+
+
+        <label class="form-field">
+
+          <span>Username <b>*</b></span>
+
+          <input
+            id="profileUsername"
+            name="username"
+            maxlength="30"
+            pattern="[A-Za-z0-9_]+"
+            placeholder="your_username"
+            required
+          >
+
+          <small class="field-hint">
+            Letters, numbers, and underscores only.
+          </small>
+
+        </label>
+
+
+        <label class="form-field">
+
+          <span>About you</span>
+
+          <textarea
+            id="profileBio"
+            name="bio"
+            rows="3"
+            maxlength="300"
+            placeholder="Tell your community a little about yourself..."
+          ></textarea>
+
+        </label>
+
+
+        <label class="form-field">
+
+          <span>Neighborhood</span>
+
+          <input
+            id="profileLocation"
+            name="location"
+            maxlength="120"
+            placeholder="Your area"
+          >
+
+        </label>
+
+
+        <label class="form-field">
+
+          <span>Contact preference</span>
+
+          <select id="profileContact" name="contactPreference">
+
+            <option value="none">
+              No external contact
+            </option>
+
+            <option value="whatsapp">
+              WhatsApp
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <div class="profile-contact-note">
+
+          Contact information is not publicly displayed by this
+          frontend-only profile form.
+
+        </div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="button-quiet"
+            id="cancelProfile"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="button-primary"
+            id="saveProfile"
+          >
+            Save profile <span>→</span>
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+
+  <!-- COMMONLY PLUS / ONE-TIME PAYPAL CHECKOUT -->
+  <div class="modal-backdrop hidden" id="plusModal" role="dialog"
+       aria-modal="true" aria-labelledby="plusModalTitle">
+    <div class="modal-card plus-modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">MORE ROOM TO DO GOOD</p>
+          <h2 id="plusModalTitle">Meet Commonly Plus</h2>
+        </div>
+        <button type="button" class="close-modal" id="closePlus" aria-label="Close">×</button>
+      </div>
+
+      <div class="plus-hero">
+        <span class="plus-mark">✦</span>
+        <div>
+          <span class="plus-label">COMMONLY PLUS</span>
+          <h3>Share without limits.</h3>
+          <p>A 30-day pass. One payment. No automatic renewal.</p>
+        </div>
+      </div>
+
+      <div class="plus-benefits">
+        <div><span>✓</span><strong>Unlimited offers</strong><small>Share as much as you need.</small></div>
+        <div><span>✓</span><strong>Unlimited requests</strong><small>Ask your community for help.</small></div>
+        <div><span>✦</span><strong>GoodOne AI post creator</strong><small>Turn a short idea into an editable draft.</small></div>
+      </div>
+
+      <div class="plus-price-row">
+        <div>
+          <small>30-DAY ACCESS</small>
+          <strong id="plusPrice">Loading price…</strong>
+        </div>
+        <span class="one-time-label">ONE-TIME PAYMENT</span>
+      </div>
+
+      <p class="plus-expiry-note" id="plusExpiryNote">Your access begins after PayPal confirms the payment.</p>
+      <div id="paypalButtonContainer" class="paypal-button-container"></div>
+      <p class="paypal-status" id="paypalStatus" role="status">Loading checkout options…</p>
+      <p class="plus-legal">Payments are processed by PayPal. Commonly stores the payment reference and membership dates. This is not a recurring subscription.</p>
+    </div>
+  </div>
+
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <script src="/dashboard.js" defer></script>
+
+</body>
+</html>

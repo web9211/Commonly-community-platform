@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Commonly — Good things happen together</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Intro splash: shown first, then opens the signup screen -->
+  <section id="introScreen" class="intro-screen" aria-labelledby="introTitle">
+    <div class="intro-glow intro-glow-one"></div>
+    <div class="intro-glow intro-glow-two"></div>
+
+    <div class="intro-top">
+      <a class="brand brand-light" href="#" aria-label="Commonly home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>commonly</span>
+      </a>
+      <span class="intro-pill"><span class="status-dot"></span> A little more human</span>
+    </div>
+
+    <div class="intro-content">
+      <div class="orbit-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="orbit-center"><span class="heart-shape">♥</span></div>
+        <div class="orbit-node node-one">✦</div>
+        <div class="orbit-node node-two">↗</div>
+        <div class="orbit-node node-three">＋</div>
+        <div class="orbit-node node-four">☺</div>
+      </div>
+
+      <p class="eyebrow intro-eyebrow">A community built on kindness</p>
+      <h1 id="introTitle">Good things<br><em>grow together.</em></h1>
+      <p class="intro-copy">Share what you have. Find what you need.<br>Make your neighborhood feel a little closer.</p>
+      <button id="startButton" class="button button-bright button-wide" type="button">
+        Find your people <span class="button-arrow">→</span>
+      </button>
+      <div class="intro-footnote"><span class="tiny-spark">✦</span> Small acts. Real connection.</div>
+    </div>
+
+    <div class="intro-bottom">
+      <span>COMMUNITY, REIMAGINED</span>
+      <span>01 <span class="bottom-line"></span> 03</span>
+    </div>
+  </section>
+
+  <!-- Signup screen -->
+  <main id="authScreen" class="auth-screen hidden">
+    <div class="auth-left">
+      <div class="auth-left-shape shape-one"></div>
+      <div class="auth-left-shape shape-two"></div>
+      <div class="auth-left-content">
+        <a class="brand brand-light" href="#" aria-label="Commonly home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>commonly</span>
+        </a>
+
+        <div class="auth-message">
+          <div class="mini-label"><span class="status-dot"></span> BETTER, TOGETHER</div>
+          <h2>There’s more<br>than enough <em>good</em><br>to go around.</h2>
+          <p>A neighbor has what you need.<br>You have something someone else needs.<br>Let’s make the connection.</p>
+        </div>
+
+        <div class="community-proof">
+          <div class="avatar-stack" aria-hidden="true">
+            <span class="avatar avatar-a">M</span>
+            <span class="avatar avatar-b">J</span>
+            <span class="avatar avatar-c">A</span>
+            <span class="avatar avatar-d">+</span>
+          </div>
+          <div><strong>Goodness is contagious.</strong><span>Join a community that shows up.</span></div>
+        </div>
+        <div class="left-bottom-note">A little help can change a whole day. <span>✦</span></div>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-mobile-brand">
+        <a class="brand brand-dark" href="#" aria-label="Commonly home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>commonly</span>
+        </a>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-heading">
+          <span class="eyebrow">YOUR COMMUNITY STARTS HERE</span>
+          <h1 id="formTitle">Make room for<br><em>good things.</em></h1>
+          <p id="formSubtitle">Create your account and start sharing with people around you.</p>
+        </div>
+
+        <button id="googleButton" class="button google-button" type="button">
+          <span class="google-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.7 1.22 9.2 3.6l6.9-6.9C35.9 2.4 30.4 0 24 0 14.7 0 6.7 5.3 2.8 13l8 6.2C12.7 13.5 17.9 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.15-3.1-.4-4.5H24v9h12.4c-.55 2.9-2.2 5.35-4.7 7l7.5 5.8c4.4-4.05 6.9-10 6.9-17.3z"/><path fill="#FBBC05" d="M10.8 28.8c-.65-1.45-1-3.1-1-4.8s.35-3.35 1-4.8l-8-6.2C1 16.2 0 20 0 24s1 7.8 2.8 11l8-6.2z"/><path fill="#34A853" d="M24 48c6.4 0 11.8-2.1 15.7-5.7l-7.5-5.8c-2.1 1.4-4.8 2.2-8.2 2.2-6.1 0-11.3-4-13.2-9.5l-8 6.2C6.7 42.7 14.7 48 24 48z"/></svg>
+          </span>
+          Continue with Google
+        </button>
+
+        <div class="divider"><span>or sign up with email</span></div>
+
+        <form id="signupForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fullName">Your name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="e.g. Alex Morgan" autocomplete="name">
+              <small id="nameError" class="field-error"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+            <small id="emailError" class="field-error"></small>
+          </div>
+
+          <div class="field">
+            <label for="password">Create password</label>
+            <div class="password-wrap">
+              <input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password">
+              <button id="togglePassword" class="password-toggle" type="button" aria-label="Show password">Show</button>
+            </div>
+            <small id="passwordError" class="field-error"></small>
+          </div>
+
+          <label class="terms-check">
+            <input id="agreeTerms" type="checkbox">
+            <span class="custom-check"></span>
+            <span>I agree to the <a href="#" id="termsLink">Terms</a> and <a href="#" id="privacyLink">Privacy Policy</a>.</span>
+          </label>
+          <small id="termsError" class="field-error terms-error"></small>
+
+          <button id="createAccountButton" class="button button-primary button-wide" type="submit">
+            Create account <span class="button-arrow">→</span>
+          </button>
+        </form>
+
+        <p class="signin-line">Already part of the community? <button id="signInButton" type="button">Sign in</button></p>
+        <div class="secure-note"><span class="lock-icon">⌑</span> Your details stay yours. Always.</div>
+      </div>
+      <div class="auth-footer"><span>© 2026 Commonly</span><span>Made for people, by people <b>✦</b></span></div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
